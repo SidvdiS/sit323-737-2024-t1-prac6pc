@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-node-app
+  labels:
+    app: my-node-app
+spec:
+  selector:
+    matchLabels:
+      app: my-node-app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: my-node-app
+    spec:
+      containers:
+        - name: my-node-app
+          image: sidvdis/sit737_6c:v2
+          ports:
+            - containerPort: 5000
